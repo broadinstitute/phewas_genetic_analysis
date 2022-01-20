@@ -1,6 +1,10 @@
 #!/usr/bin/python
-
+import pickle
+import hail as hl
+from gnomad.sample_qc.ancestry import assign_population_pcs
 import sys, getopt
+
+hl.init()
 
 def main(argv):
    inputfile = ''
@@ -11,7 +15,7 @@ def main(argv):
       opts, args = getopt.getopt(argv,"hi:l:m:o:",["ifile=","lfile=","mfile=","ofile="])
    except getopt.GetoptError:
       print 'test.py -i <inputfile> -l <loadingfile> -m <RFmodelfile> -o <outputfile>'
-      sys.exit(4)
+      sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
          print 'ancestry_inference.py -i <inputfile> -l <loadingfile> -m <RFmodelfile> -o <outputfile>'
@@ -32,10 +36,6 @@ def main(argv):
 if __name__ == "__main__":
    main(sys.argv[1:])
 
-import pickle
-import hail as hl
-from gnomad.sample_qc.ancestry import assign_population_pcs
-hl.init()
 
 # Load MatrixTable for projection and gnomAD loadings Hail Table
 mt_to_project = hl.read_matrix_table(inputfile)
