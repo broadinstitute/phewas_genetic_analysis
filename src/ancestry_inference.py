@@ -1,9 +1,4 @@
-import pickle
-import hail as hl
-from gnomad.sample_qc.ancestry import assign_population_pcs
 import sys, getopt
-
-hl.init()
 
 def main(argv):
    inputfile = ''
@@ -34,6 +29,12 @@ def main(argv):
 
 if __name__ == "__main__":
    main(sys.argv[1:])
+
+
+import pickle
+import hail as hl
+from gnomad.sample_qc.ancestry import assign_population_pcs
+hl.init()
 
 
 # Load MatrixTable for projection and gnomAD loadings Hail Table
