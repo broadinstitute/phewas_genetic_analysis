@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 import pickle
 import hail as hl
 from gnomad.sample_qc.ancestry import assign_population_pcs
