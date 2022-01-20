@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+
 import pickle
 import hail as hl
 from gnomad.sample_qc.ancestry import assign_population_pcs
@@ -14,11 +15,11 @@ def main(argv):
    try:
       opts, args = getopt.getopt(argv,"hi:l:m:o:",["ifile=","lfile=","mfile=","ofile="])
    except getopt.GetoptError:
-      print 'test.py -i <inputfile> -l <loadingfile> -m <RFmodelfile> -o <outputfile>'
+      print ('test.py -i <inputfile> -l <loadingfile> -m <RFmodelfile> -o <outputfile>')
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print 'ancestry_inference.py -i <inputfile> -l <loadingfile> -m <RFmodelfile> -o <outputfile>'
+         print ('ancestry_inference.py -i <inputfile> -l <loadingfile> -m <RFmodelfile> -o <outputfile>')
          sys.exit()
       elif opt in ("-i", "--ifile"):
          inputfile = arg
@@ -28,10 +29,10 @@ def main(argv):
          RFmodelfile = arg
       elif opt in ("-o", "--ofile"):
          outputfile = arg
-   print 'Input file is "', inputfile
-   print 'Loadings file is "', outputfile
-   print 'Random forest model file is "', inputfile
-   print 'Output file is "', outputfile
+   print ('Input file is "', inputfile)
+   print ('Loadings file is "', outputfile)
+   print ('Random forest model file is "', inputfile)
+   print ()'Output file is "', outputfile)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
