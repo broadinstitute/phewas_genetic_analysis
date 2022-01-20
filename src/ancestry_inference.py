@@ -29,10 +29,10 @@ def main(argv):
          RFmodelfile = arg
       elif opt in ("-o", "--ofile"):
          outputfile = arg
-   print ('Input file is "', inputfile)
-   print ('Loadings file is "', outputfile)
-   print ('Random forest model file is "', inputfile)
-   print ()'Output file is "', outputfile)
+   print ('Input file is ', inputfile)
+   print ('Loadings file is ', outputfile)
+   print ('Random forest model file is ', inputfile)
+   print ('Output file is ', outputfile)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
