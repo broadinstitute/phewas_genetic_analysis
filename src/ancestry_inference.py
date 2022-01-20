@@ -8,7 +8,7 @@ def main(argv):
    RFmodelfile = ''
    outputfile = ''
    try:
-      opts, args = getopt.getopt(argv,"hi:l:m:o",["ifile=","lfile=","mfile=","ofile="])
+      opts, args = getopt.getopt(argv,"hi:l:m:o:",["ifile=","lfile=","mfile=","ofile="])
    except getopt.GetoptError:
       print 'test.py -i <inputfile> -l <loadingfile> -m <RFmodelfile> -o <outputfile>'
       sys.exit(4)
