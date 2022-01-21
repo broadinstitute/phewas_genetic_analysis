@@ -54,15 +54,15 @@ with hl.hadoop_open(RFmodelfile, "rb") as f:
             fit = pickle.load(f)
 
     # Reduce the scores to only those used in the RF model, this was 6 for v2 and 16 for v3.1
-    num_pcs = fit.n_features_
-    ht = ht.annotate(scores=ht.scores[:num_pcs])
-    ht, rf_model = assign_population_pcs(
-        ht,
-        pc_cols=ht.scores,
-        fit=fit,
-        )
-    ht.show(5)
-    ht.export(outputfile, delimiter='\t')
+num_pcs = fit.n_features_
+ht = ht.annotate(scores=ht.scores[:num_pcs])
+ht, rf_model = assign_population_pcs(
+    ht,
+    pc_cols=ht.scores,
+    fit=fit,
+    )
+ht.show(5)
+ht.export(outputfile, delimiter='\t')
 
 
 if __name__ == "__main__":
