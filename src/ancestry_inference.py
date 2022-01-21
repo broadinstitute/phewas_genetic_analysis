@@ -36,9 +36,6 @@ def main(argv):
    print ('Output file is ', outputfile)
 
 
-if __name__ == "__main__":
-   main(sys.argv[1:])
-
 
 
 print ('Input file is ', inputfile)
@@ -70,3 +67,7 @@ ht, rf_model = assign_population_pcs(
 )
 ht.show(5)
 ht.export(outputfile, delimiter='\t')
+
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
