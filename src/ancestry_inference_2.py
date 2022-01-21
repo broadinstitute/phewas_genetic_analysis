@@ -54,29 +54,26 @@ def parse_param():
     return param_dict
 
 
-def main():
-    param_dict = parse_param()
 
-  # Load MatrixTable for projection and gnomAD loadings Hail Table
-    mt_to_project = hl.read_matrix_table(param_dict['inputfile'])
-    loadings_ht = hl.read_table(param_dict['loadingfile'])
+param_dict = parse_param()
 
-      # Project new genotypes onto loadings
-    ht = hl.experimental.pc_project(
-        mt_to_project.GT,
-        loadings_ht.loadings,
-        loadings_ht.pca_af,
-    )
-if __name__ == '__main__':
-    main()
-
-       # Assign global ancestry using the gnomAD RF model and PC project scores
-       # Loading of the v2 RF model requires an older version of scikit-learn, this can be installed using pip install -U scikit-learn==0.21.3
+# Assign global ancestry using the gnomAD RF model and PC project scores
+# Loading of the v2 RF model requires an older version of scikit-learn, this can be installed using pip install -U scikit-learn==0.21.3
 with hl.hadoop_open("gs://gcp-public-data--gnomad/release/3.1/pca/gnomad.v3.1.RF_fit.pkl", "rb") as f:
         fit = pickle.load(f)
 
-param_dict = parse_param()
-       # Reduce the scores to only those used in the RF model, this was 6 for v2 and 16 for v3.1
+# Load MatrixTable for projection and gnomAD loadings Hail Table
+mt_to_project = hl.read_matrix_table(param_dict['inputfile'])
+loadings_ht = hl.read_table(param_dict['loadingfile'])
+
+# Project new genotypes onto loadings
+ht = hl.experimental.pc_project(
+    mt_to_project.GT,
+    loadings_ht.loadings,
+    loadings_ht.pca_af,
+)
+
+# Reduce the scores to only those used in the RF model, this was 6 for v2 and 16 for v3.1
 num_pcs = fit.n_features_
 ht = ht.annotate(scores=ht.scores[:num_pcs])
 ht, rf_model = assign_population_pcs(
