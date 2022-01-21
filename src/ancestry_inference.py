@@ -1,3 +1,6 @@
+### source of the code
+### https://gnomad.broadinstitute.org/news/2021-09-using-the-gnomad-ancestry-principal-components-analysis-loadings-and-random-forest-classifier-on-your-dataset/
+
 import sys, getopt
 
 def main(argv):
@@ -26,9 +29,6 @@ def main(argv):
    print ('Loadings file is ', outputfile)
    print ('Random forest model file is ', inputfile)
    print ('Output file is ', outputfile)
-
-if __name__ == "__main__":
-   main(sys.argv[1:])
 
 
 import pickle
@@ -63,3 +63,7 @@ ht, rf_model = assign_population_pcs(
 )
 ht.show(5)
 ht.export(outputfile, delimiter='\t')
+
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
