@@ -41,8 +41,8 @@ def main(argv):
    mt_to_project = hl.read_matrix_table(inputfile)
    loadings_ht = hl.read_table(loadingfile)
 
-# Project new genotypes onto loadings
-        ht = hl.experimental.pc_project(
+   # Project new genotypes onto loadings
+    ht = hl.experimental.pc_project(
         mt_to_project.GT,
         loadings_ht.loadings,
         loadings_ht.pca_af,
