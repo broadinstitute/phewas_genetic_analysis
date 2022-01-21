@@ -40,6 +40,8 @@ if __name__ == "__main__":
 
 hl.init()
 
+print ('Input file is ', inputfile)
+
 
 # Load MatrixTable for projection and gnomAD loadings Hail Table
 mt_to_project = hl.read_matrix_table(inputfile)
