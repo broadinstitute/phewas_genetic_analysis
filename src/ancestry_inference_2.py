@@ -7,10 +7,6 @@ import pickle
 import hail as hl
 from gnomad.sample_qc.ancestry import assign_population_pcs
 
-
-      print ('test.py -i <inputfile> -l <loadingfile> -m <RFmodelfile> -o <outputfile>')
-
-
 def parse_param():
     long_opts_list = ['inputfile=', 'loadingfile=', 'RFmodelfile=', 'outputfile=','help']
 
@@ -71,23 +67,21 @@ def main():
         loadings_ht.loadings,
         loadings_ht.pca_af,
     )
+if __name__ == '__main__':
+    main()
 
        # Assign global ancestry using the gnomAD RF model and PC project scores
        # Loading of the v2 RF model requires an older version of scikit-learn, this can be installed using pip install -U scikit-learn==0.21.3
-   with hl.hadoop_open(param_dict['RFmodelfile'], "rb") as f:
-               fit = pickle.load(f)
+with hl.hadoop_open(param_dict['RFmodelfile'], "rb") as f:
+        fit = pickle.load(f)
 
        # Reduce the scores to only those used in the RF model, this was 6 for v2 and 16 for v3.1
-   num_pcs = fit.n_features_
-   ht = ht.annotate(scores=ht.scores[:num_pcs])
-   ht, rf_model = assign_population_pcs(
-       ht,
-       pc_cols=ht.scores,
-       fit=fit,
-       )
-   ht.show(5)
-   ht.export(param_dict['outputfile'], delimiter='\t')
-
-
-if __name__ == '__main__':
-    main()
+num_pcs = fit.n_features_
+ht = ht.annotate(scores=ht.scores[:num_pcs])
+ht, rf_model = assign_population_pcs(
+    ht,
+    pc_cols=ht.scores,
+    fit=fit,
+    )
+ht.show(5)
+ht.export(param_dict['outputfile'], delimiter='\t')
