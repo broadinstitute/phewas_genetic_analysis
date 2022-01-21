@@ -2,6 +2,9 @@
 ### https://gnomad.broadinstitute.org/news/2021-09-using-the-gnomad-ancestry-principal-components-analysis-loadings-and-random-forest-classifier-on-your-dataset/
 
 """
+pip install -U gnomad --user --force-reinstall
+pip install -U scikit-learn==0.23.2 --user
+
 git clone https://github.com/broadinstitute/AoU_genetic_analysis.git
 chmod 777 AoU_genetic_analysis/src/ancestry_inference.py
 
