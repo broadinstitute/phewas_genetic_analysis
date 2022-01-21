@@ -51,7 +51,7 @@ def main(argv):
 # Assign global ancestry using the gnomAD RF model and PC project scores
 # Loading of the v2 RF model requires an older version of scikit-learn, this can be installed using pip install -U scikit-learn==0.21.3
     with hl.hadoop_open(RFmodelfile, "rb") as f:
-            fit = pickle.load(f)
+        fit = pickle.load(f)
 
 # Reduce the scores to only those used in the RF model, this was 6 for v2 and 16 for v3.1
     num_pcs = fit.n_features_
