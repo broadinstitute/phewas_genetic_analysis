@@ -2,6 +2,9 @@
 ### https://gnomad.broadinstitute.org/news/2021-09-using-the-gnomad-ancestry-principal-components-analysis-loadings-and-random-forest-classifier-on-your-dataset/
 
 import sys, getopt
+import pickle
+import hail as hl
+from gnomad.sample_qc.ancestry import assign_population_pcs
 
 def main(argv):
    inputfile = ''
@@ -31,9 +34,10 @@ def main(argv):
    print ('Output file is ', outputfile)
 
 
-import pickle
-import hail as hl
-from gnomad.sample_qc.ancestry import assign_population_pcs
+if __name__ == "__main__":
+   main(sys.argv[1:])
+
+
 hl.init()
 
 
@@ -63,7 +67,3 @@ ht, rf_model = assign_population_pcs(
 )
 ht.show(5)
 ht.export(outputfile, delimiter='\t')
-
-
-if __name__ == "__main__":
-   main(sys.argv[1:])
