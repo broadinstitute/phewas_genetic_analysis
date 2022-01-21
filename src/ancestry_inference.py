@@ -1,6 +1,19 @@
 ### source of the code
 ### https://gnomad.broadinstitute.org/news/2021-09-using-the-gnomad-ancestry-principal-components-analysis-loadings-and-random-forest-classifier-on-your-dataset/
 
+"""
+git clone https://github.com/broadinstitute/AoU_genetic_analysis.git
+chmod 777 AoU_genetic_analysis/src/ancestry_inference.py
+
+python3 AoU_genetic_analysis/src/ancestry_inference.py -help
+
+python3 AoU_genetic_analysis/src/ancestry_inference.py --inputfile=gs://fc-secure-4adb21f6-46f4-4a79-99f9-afd63890c6d0/data/AoU_22K_WGS_all.mt \
+--loadingfile=gs://gcp-public-data--gnomad/release/3.1/pca/gnomad.v3.1.pca_loadings.ht \
+--RFmodelfile=gs://gcp-public-data--gnomad/release/3.1/pca/gnomad.v3.1.RF_fit.pkl \
+--outputfile=gs://fc-secure-a7a6da68-f796-46ad-86bb-4b56f01bfeb2/data/gnomad_inferred_test.tsv.bgz
+"""
+
+
 import os
 import sys, getopt
 import pickle
