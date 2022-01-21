@@ -6,6 +6,8 @@ import pickle
 import hail as hl
 from gnomad.sample_qc.ancestry import assign_population_pcs
 
+hl.init()
+
 def main(argv):
    inputfile = ''
    loadingfile = ''
@@ -38,7 +40,6 @@ if __name__ == "__main__":
    main(sys.argv[1:])
 
 
-hl.init()
 
 print ('Input file is ', inputfile)
 
