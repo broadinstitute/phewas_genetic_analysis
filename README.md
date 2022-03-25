@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# AoU_genetic_analysis
+# phewas_genetic_analysis
 
 ## Running acnestry inference using gnomAD PC loadings in a terminal
 pip install -U gnomad --user --force-reinstall
