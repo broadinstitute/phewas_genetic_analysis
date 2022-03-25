@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AoU_genetic_analysis
 
 ## Running acnestry inference using gnomAD PC loadings in a terminal
@@ -18,3 +19,6 @@ python3 AoU_genetic_analysis/src/ancestry_inference.py --inputfile=gs://fc-secur
 --loadingfile=gs://gcp-public-data--gnomad/release/3.1/pca/gnomad.v3.1.pca_loadings.ht \
 --RFmodelfile=gs://gcp-public-data--gnomad/release/3.1/pca/gnomad.v3.1.RF_fit.pkl \
 --outputfile=gs://fc-secure-a7a6da68-f796-46ad-86bb-4b56f01bfeb2/data/gnomad_inferred_test.tsv.bgz
+=======
+# phewas_genetic_analysis
+>>>>>>> c2a115c4b883b7ae5bfda274a5a2e21154dad3e6
