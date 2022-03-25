@@ -5,7 +5,7 @@ library(GWASTools)
 library(SeqArray)
 library(SeqVarTools)
 library(SPAtest)
-source("./UKBB_200KWES_CVD/GENESIS_adaptation_source.R")
+source("/UKBB_200KWES_CVD/GENESIS_adaptation_source.R")
 
 
 args=(commandArgs(TRUE))
