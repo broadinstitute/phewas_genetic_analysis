@@ -19,7 +19,7 @@ outfile=as.character(args[8])
 aou_sinlgevaraint<-function(gdsfile,phenofile,ID_col,maf_cutoff=0.01,stat="Score.SPA",nullmodel,outfile){
 
 pheno <- fread(phenofile,header=T,data.table=F,sep="\t")
-pheno$sample.id<-pheno[,id_col]
+pheno$sample.id<-pheno[,ID_col]
 ids <- pheno$sample.id
 
 gds <- seqOpen(gdsfile, allow.duplicate=T)
