@@ -10,7 +10,7 @@ nullfile,
 outfolder,
 taskfile){
 
-if(length(gdsfiles)!=22){
+if(length(gdsfile)!=22){
 stop("we need 22 gds files")
 }
 
