@@ -54,5 +54,5 @@ outputfiles<-paste0("--output chr",1:22,"_outfile")
 logfiles<-paste0("--output chr",1:22,"_logfile")
 
 names(taskinput)<-c(env_variables,gdsfiles,groupfiles,common_input,outputfiles,logfiles)
-
+return(taskinput)
 }
