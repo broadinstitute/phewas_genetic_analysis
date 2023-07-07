@@ -5,7 +5,7 @@ phenfile,
 ID_col,
 nprallel=1,
 gdsfile,
-goupgingfile,
+groupfile,
 nullfile,
 outfolder,
 taskfile){
@@ -14,7 +14,7 @@ if(length(gdsfile)!=22){
 stop("we need 22 gds files")
 }
 
-if(length(goupgingfile)!=22){
+if(length(groupfile)!=22){
 stop("we need 22 groupingfile files")
 }
 
