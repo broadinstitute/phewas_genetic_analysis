@@ -16,9 +16,14 @@ git clone --branch v1.2 https://github.com/seanjosephjurgens/UKBB_200KWES_CVD.gi
 wget https://bit.ly/3rmveIc -O rpackages4_1_3_aou.tar.gz
 tar -xvf rpackages4_1_3_aou.tar.gz
 
-####
-# args="1\n2\n3\n4\n5\n6"
-# echo -e $args | xargs -I "{}" -P 2 ./process {}.jpg
+## if the phenotypefile is compressed then decompressed the file
+if (file ${phenfile} | grep -q compressed ) ; then
+     echo "phenotypefile is compressed"
+     gunzip -c ${phenfile} > phenotypefile.tsv
+     phenfile=phenotypefile.tsv
+fi
+
+#### preparing multithread approach
 
 aargs="${chr1_gdsfile}\n${chr1_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr1_outfile}\n${chr1_logfile}\n
 ${chr2_gdsfile}\n${chr2_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr2_outfile}\n${chr2_logfile}\n
