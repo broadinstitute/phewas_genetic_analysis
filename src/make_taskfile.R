@@ -24,6 +24,7 @@ stop("N nullfile needs to match N trait")
 
 ntasks<-length(nullfile)
 
+taskinput<-NULL
 for (ii in 1:length(ntasks)){
 
 task_id<-taskname[ii]
@@ -41,6 +42,7 @@ taskinput1<-data.frame(task_id,nprallel,traitname,ID_col,
   outfile[1],outfile[2],outfile[3],outfile[4],outfile[5],outfile[6],outfile[7],outfile[8],outfile[9],outfile[10],outfile[11],outfile[12],outfile[13],outfile[14],outfile[15],outfile[16],outfile[17],outfile[18],outfile[19],outfile[20],outfile[21],outfile[22],
   logfile[1],logfile[2],logfile[3],logfile[4],logfile[5],logfile[6],logfile[7],logfile[8],logfile[9],logfile[10],logfile[11],logfile[12],logfile[13],logfile[14],logfile[15],logfile[16],logfile[17],logfile[18],logfile[19],logfile[20],logfile[21],logfile[22],
   stringsAsFactors=F)
+taskinput<-rbind(taskinput,taskinput1)
 }
 
 
