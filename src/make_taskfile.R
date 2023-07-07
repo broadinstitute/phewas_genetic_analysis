@@ -26,7 +26,7 @@ ntasks<-length(nullfile)
 
 for (ii in 1:length(ntasks)){
 
-trask_id<-taskname[ii]
+task_id<-taskname[ii]
 traitname<-trait[ii]
 phenfile0<-phenfile[ii]
 nullfile0<-nullfile[ii]
