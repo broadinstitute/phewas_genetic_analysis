@@ -4,18 +4,6 @@ set -o errexit
 # Author: Seung Hoan Choi <seuchoi@bu.edu>
 # July 2023
 
-## re-install github repository
-rm -rf phewas_genetic_analysis
-git clone https://github.com/broadinstitute/phewas_genetic_analysis.git
-rm -rf TOPMed_AFib_pipeline
-git clone https://github.com/broadinstitute/TOPMed_AFib_pipeline.git
-rm -rf UKBB_200KWES_CVD
-git clone --branch v1.2 https://github.com/seanjosephjurgens/UKBB_200KWES_CVD.git
-
-## download pre-installed R-pcakges
-wget https://bit.ly/3rmveIc -O rpackages4_1_3_aou.tar.gz
-tar -xvf rpackages4_1_3_aou.tar.gz
-
 ## if the phenotypefile is compressed then decompressed the file
 if (file ${phenfile} | grep -q compressed ) ; then
      echo "phenotypefile is compressed"
