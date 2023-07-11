@@ -4,15 +4,12 @@ set -o errexit
 # Author: Seung Hoan Choi <seuchoi@bu.edu>
 # July 2023
 
-## if the phenotypefile is compressed then decompressed the file
-## if (file ${phenfile} | grep -q compressed ) ; then
-##      echo "phenotypefile is compressed"
-##      gunzip -c ${phenfile} > phenotypefile.tsv
-##      phenfile=phenotypefile.tsv
-## fi
-
-#### preparing multithread approach
-
+# if the phenotypefile is compressed then decompressed the file
+# if (file ${phenfile} | grep -q compressed ) ; then
+echo "phenotypefile is compressed"
+gunzip -c ${phenfile} > phenotypefile.tsv
+phenfile=phenotypefile.tsv
+# fi
 aargs="${chr1_gdsfile}\n${chr1_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr1_outfile}\n${test_type}\n${af_cutoff}\n${chr1_logfile}\n
 ${chr2_gdsfile}\n${chr2_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr2_outfile}\n${test_type}\n${af_cutoff}\n${chr2_logfile}\n
 ${chr3_gdsfile}\n${chr3_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr3_outfile}\n${test_type}\n${af_cutoff}\n${chr3_logfile}\n
@@ -35,7 +32,5 @@ ${chr19_gdsfile}\n${chr19_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr
 ${chr20_gdsfile}\n${chr20_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr20_outfile}\n${test_type}\n${af_cutoff}\n${chr20_logfile}\n
 ${chr21_gdsfile}\n${chr21_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr21_outfile}\n${test_type}\n${af_cutoff}\n${chr21_logfile}\n
 ${chr22_gdsfile}\n${chr22_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr22_outfile}\n${test_type}\n${af_cutoff}\n${chr22_logfile}"
-
-
-## Run analysis
+# Run analysis
 echo -e ${aargs} | xargs -n9 -P${nparallel} sh -c 'R CMD BATCH \"--args $0 $1 $2 $3 $4 $5 $6 $7\" TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_v3.R $8' sh
