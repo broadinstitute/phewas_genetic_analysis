@@ -5,11 +5,11 @@ set -o errexit
 # July 2023
 
 ## if the phenotypefile is compressed then decompressed the file
-if (file ${phenfile} | grep -q compressed ) ; then
-     echo "phenotypefile is compressed"
-     gunzip -c ${phenfile} > phenotypefile.tsv
-     phenfile=phenotypefile.tsv
-fi
+## if (file ${phenfile} | grep -q compressed ) ; then
+##      echo "phenotypefile is compressed"
+##      gunzip -c ${phenfile} > phenotypefile.tsv
+##      phenfile=phenotypefile.tsv
+## fi
 
 #### preparing multithread approach
 
