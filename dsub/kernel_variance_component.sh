@@ -38,4 +38,4 @@ ${chr22_gdsfile}\n${chr22_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr
 
 
 ## Run analysis
-echo -e ${aargs} | xargs -n9 -P${nprarelle} sh -c 'R CMD BATCH \"--args $0 $1 $2 $3 $4 $5 $6 $7\" TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_v3.R $8' sh
+echo -e ${aargs} | xargs -n9 -P${nparallel} sh -c 'R CMD BATCH \"--args $0 $1 $2 $3 $4 $5 $6 $7\" TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_v3.R $8' sh
