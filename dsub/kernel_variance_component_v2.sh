@@ -37,7 +37,7 @@ ${chr22_gdsfile}\n${chr22_groupfile}\n${phenfile}\n${ID_col}\n${nullfile}\n${chr
 echo -e ${aargs}
 
 # Run analysis
-echo -e ${aargs} | xargs -n9 -P2 sh -c 'R CMD BATCH \"--args $0 $1 $2 $3 $4 $5\" /phewas_genetic_analysis/src/kernel_variance_component.R $6' sh
+echo -e ${aargs} | xargs -n7 -P2 sh -c 'R CMD BATCH \"--args $0 $1 $2 $3 $4 $5\" /phewas_genetic_analysis/src/kernel_variance_component.R $6' sh
 
 
 
