@@ -11,7 +11,7 @@ source("/UKBB_200KWES_CVD/GENESIS_adaptation_source.R")
 source("/TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_modfied.R")
 source("/TOPMed_AFib_pipeline/DNANexus/ExtractKernelStatistics_error_fixed.R")
 
-try(kernell_variance_component_v2(gdsfile=gdsfile,
+try(kernell_variance_component_v3(gdsfile=gdsfile,
 groupfile=groupfile,
 phenfile=phenfile,
 ID_col=ID_col,
