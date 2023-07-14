@@ -11,7 +11,7 @@ gunzip -c ${phenfile} > phenotypefile.tsv
 phenfile=phenotypefile.tsv
 fi
 
-R CMD BATCH "--args ${chr22_gdsfile} ${chr22_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr22_outfile} ${test_type} ${af_cutoff} " /TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_aou.R ${chr22_logfile}
+R CMD BATCH "--args ${chr22_gdsfile} ${chr22_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr22_outfile}" /TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_aou.R ${chr22_logfile}
 echo "chr22 ran"
 
 # run the analysis
