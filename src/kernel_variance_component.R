@@ -5,6 +5,8 @@ phenfile=as.character(args[3])
 ID_col=as.character(args[4])
 nullfile=as.character(args[5])
 outfile=as.character(args[6])
+scoretype=as.character(args[7])
+afcutoff=as.numeric(args[7])
 
 cat('\nReading in packages for analysis...\n')
 source("/UKBB_200KWES_CVD/GENESIS_adaptation_source.R")
@@ -18,8 +20,8 @@ ID_col=ID_col,
 nullfile=nullfile,
 outfile=outfile,
 test="ExtractKernelStatistics",
-vc.test="Score",
-AF.max=0.001,
+vc.test=scoretype,
+AF.max=afcutoff,
 MAC.max=Inf,
 use.weights=FALSE),silent=F)
 
