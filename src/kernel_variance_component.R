@@ -21,7 +21,7 @@ test="ExtractKernelStatistics",
 vc.test="Score",
 AF.max=0.001,
 MAC.max=Inf,
-use.weights=FALSE),silent=T)
+use.weights=FALSE),silent=F)
 
 sessionInfo()
 quit("no")
