@@ -13,7 +13,7 @@ phenfile=phenotypefile.tsv
 fi
 ls /phewas_genetic_analysis/src/kernel_variance_component.R
 cat /phewas_genetic_analysis/src/kernel_variance_component.R
-R CMD BATCH "--args ${chr22_gdsfile} ${chr22_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr22_logfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr22_logfile}
+R CMD BATCH "--args ${chr22_gdsfile} ${chr22_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr22_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr22_logfile}
 echo "chr22 ran"
 
 # run the analysis
