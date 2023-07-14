@@ -10,9 +10,13 @@ echo "phenotypefile is compressed"
 gunzip -c ${phenfile} > phenotypefile.tsv
 phenfile=phenotypefile.tsv
 fi
+
+R CMD BATCH "--args ${chr22_gdsfile} ${chr22_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr22_outfile} ${test_type} ${af_cutoff} " /TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_aou.R ${chr22_logfile}
+echo "chr22 ran"
+
 # run the analysis
 #R CMD BATCH "--args ${trait} ${chr1_gdsfile} ${chr1_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr1_outfile}" /phewas_genetic_analysis/src/aggregated_burden_test_cont.R ${chr1_logfile}
-R CMD BATCH "--args ${chr22_gdsfile} ${chr22_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr22_outfile} ${test_type} ${af_cutoff} " /TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_test.R ${chr22_logfile}
+#R CMD BATCH "--args ${chr22_gdsfile} ${chr22_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr22_outfile} ${test_type} ${af_cutoff} " /TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_test.R ${chr22_logfile}
 #R CMD BATCH "--args ${chr2_gdsfile} ${chr2_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr2_outfile} ${test_type} ${af_cutoff}" TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_v3.R ${chr2_logfile}
 #R CMD BATCH "--args ${chr3_gdsfile} ${chr3_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr3_outfile} ${test_type} ${af_cutoff}" TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_v3.R ${chr3_logfile} &
 #R CMD BATCH "--args ${chr4_gdsfile} ${chr4_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr4_outfile} ${test_type} ${af_cutoff}" TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_v3.R ${chr4_logfile}

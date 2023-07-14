@@ -16,10 +16,10 @@ RUN sudo git clone --branch v1.2 https://github.com/seanjosephjurgens/UKBB_200KW
 
 
 ## how to build the docker
-#docker rmi -f 20d407d070e8
+#docker rmi -f c6c1f9efce6f
 #docker build --no-cache -t genesis_2.18.0 ./
-#docker tag 20d407d070e8 genesis_2.18.0:jul122023
-#docker tag genesis_2.18.0:jul122023 us.gcr.io/aou-project-385720/genesis_2.18.0:jul122023
-#docker push us.gcr.io/aou-project-385720/genesis_2.18.0:jul122023
+#docker tag 75c339340a12 genesis_2.18.0:jul132023
+#docker tag genesis_2.18.0:jul132023 us.gcr.io/aou-project-385720/genesis_2.18.0:jul132023
+#docker push us.gcr.io/aou-project-385720/genesis_2.18.0:jul132023
 #docker tag us.gcr.io/aou-project-385720/genesis_2.18.0:jul122023 schoi/genesis_2.18.0:jul122023
 #docker push schoi/genesis_2.18.0:jul122023
