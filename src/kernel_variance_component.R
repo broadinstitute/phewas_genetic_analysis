@@ -7,9 +7,9 @@ nullfile=as.character(args[5])
 outfile=as.character(args[6])
 
 cat('\nReading in packages for analysis...\n')
-source("UKBB_200KWES_CVD/GENESIS_adaptation_source.R")
-source("TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_modfied.R")
-source("TOPMed_AFib_pipeline/DNANexus/ExtractKernelStatistics_error_fixed.R")
+source("/UKBB_200KWES_CVD/GENESIS_adaptation_source.R")
+source("/TOPMed_AFib_pipeline/DNANexus/kernell_variance_component_modfied.R")
+source("/TOPMed_AFib_pipeline/DNANexus/ExtractKernelStatistics_error_fixed.R")
 
 try(kernell_variance_component_v2(gdsfile=gdsfile,
 groupfile=groupfile,
