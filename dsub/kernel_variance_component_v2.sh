@@ -12,7 +12,7 @@ gunzip -c ${phenfile} > phenotypefile.tsv
 phenfile=phenotypefile.tsv
 fi
 
-# run the analysis two parallel computing
+# run the analysis no parallel computing
 R CMD BATCH "--args ${chr1_gdsfile} ${chr1_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr1_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr1_logfile}
 R CMD BATCH "--args ${chr2_gdsfile} ${chr2_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr2_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr2_logfile}
 R CMD BATCH "--args ${chr3_gdsfile} ${chr3_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr3_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr3_logfile}
