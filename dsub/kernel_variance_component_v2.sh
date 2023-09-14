@@ -20,7 +20,7 @@ R CMD BATCH "--args ${chr4_gdsfile} ${chr4_groupfile} ${phenfile} ${ID_col} ${nu
 R CMD BATCH "--args ${chr5_gdsfile} ${chr5_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr5_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr5_logfile}
 R CMD BATCH "--args ${chr6_gdsfile} ${chr6_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr6_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr6_logfile}
 R CMD BATCH "--args ${chr7_gdsfile} ${chr7_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr7_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr7_logfile}
-R CMD BATCH "--args ${chr9_gdsfile} ${chr8_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr8_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr8_logfile}
+R CMD BATCH "--args ${chr8_gdsfile} ${chr8_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr8_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr8_logfile}
 R CMD BATCH "--args ${chr9_gdsfile} ${chr9_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr9_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr9_logfile}
 R CMD BATCH "--args ${chr10_gdsfile} ${chr10_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr10_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr10_logfile}
 R CMD BATCH "--args ${chr11_gdsfile} ${chr11_groupfile} ${phenfile} ${ID_col} ${nullfile} ${chr11_outfile}" /phewas_genetic_analysis/src/kernel_variance_component.R ${chr11_logfile}
