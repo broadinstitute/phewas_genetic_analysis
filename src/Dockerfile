@@ -13,13 +13,13 @@ RUN sudo R CMD INSTALL GENESIS_2.18.0.tar.gz
 RUN sudo git clone https://github.com/broadinstitute/TOPMed_AFib_pipeline.git
 RUN sudo git clone https://github.com/broadinstitute/phewas_genetic_analysis.git
 RUN sudo git clone --branch v1.2 https://github.com/seanjosephjurgens/UKBB_200KWES_CVD.git
-
+RUN sudo git clone --branch dev_choi https://github.com/seuchoi/meta_transcript.git
 
 ## how to build the docker
 #docker rmi -f 75c339340a12
 #docker build --no-cache -t genesis_2.18.0 ./
-#docker tag 75c339340a12 genesis_2.18.0:jul142023
-#docker tag genesis_2.18.0:jul132023 us.gcr.io/aou-project-385720/genesis_2.18.0:jul132023
-#docker push us.gcr.io/aou-project-385720/genesis_2.18.0:jul132023
-#docker tag us.gcr.io/aou-project-385720/genesis_2.18.0:jul122023 schoi/genesis_2.18.0:jul122023
-#docker push schoi/genesis_2.18.0:jul122023
+#docker tag d7efc8074c57 genesis_2.18.0:feb132024
+#docker tag genesis_2.18.0:feb132024 us.gcr.io/aou-project-385720/genesis_2.18.0:feb132024
+#docker push us.gcr.io/aou-project-385720/genesis_2.18.0:feb132024
+#docker tag us.gcr.io/aou-project-385720/genesis_2.18.0:feb132024 schoi/genesis_2.18.0:feb132024
+#docker push schoi/genesis_2.18.0:feb132024
